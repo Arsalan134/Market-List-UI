@@ -9,7 +9,7 @@
 import Foundation
 
 /// User's list of products
-struct ProductList: Codable, Equatable, Hashable {
+struct ProductList: Identifiable, Codable, Equatable, Hashable {
 
     var id: String?
     var name: String?

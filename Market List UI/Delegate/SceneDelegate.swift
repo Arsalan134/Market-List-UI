@@ -9,6 +9,7 @@
 import UIKit
 import SwiftUI
 import FBSDKCoreKit
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -20,13 +21,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
-        // Create the SwiftUI view that provides the window contents.
-        let contentView = LoginView()
-        
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
+            if Auth.auth().currentUser?.uid != nil {
+                window.rootViewController = UIHostingController(rootView: MyListsView())
+            } else {
+                window.rootViewController = UIHostingController(rootView: LoginView())
+            }
             self.window = window
             window.makeKeyAndVisible()
         }
@@ -40,7 +42,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     
-
+    
     
     //    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
     //        if let openURLContext = URLContexts.first {
@@ -68,9 +70,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
         
-//        The final step is to let Facebook know when a user has launched your app. This is useful if you plan to advertise your app through Facebook or if you want to use their analytics to track your app’s metrics. Add the following line to your applicationDidBecomeActive method with your app’s delegate:
-
-//        AppEventsLogger.activate(application)
+        //        The final step is to let Facebook know when a user has launched your app. This is useful if you plan to advertise your app through Facebook or if you want to use their analytics to track your app’s metrics. Add the following line to your applicationDidBecomeActive method with your app’s delegate:
+        
+        //        AppEventsLogger.activate(application)
         
     }
     

@@ -10,115 +10,78 @@ import Foundation
 
 import Firebase
 import FBSDKCoreKit
-
-import Moya
-//
-//enum MyService {
-//    case zen
-//    case showUser(id: Int)
-//    case createUser(firstName: String, lastName: String)
-//    case updateUser(id: Int, firstName: String, lastName: String)
-//    case showAccounts
-//}
-//
-//extension MyService: TargetType {
-//
-//    var baseURL: URL {
-//        return URL(string: "https://api.myservice.com")!
-//    }
-//
-//    var path: String {
-//        switch self {
-//        case .zen:
-//            return "/zen"
-//        case .showUser(let id), .updateUser(let id, _, _):
-//            return "/users/\(id)"
-//        case .createUser(_, _):
-//            return "/users"
-//        case .showAccounts:
-//            return "/accounts"
-//        }
-//    }
-//
-//    var method: Moya.Method {
-//        switch self {
-//        case .zen, .showUser, .showAccounts:
-//            return .get
-//        case .createUser, .updateUser:
-//            return .post
-//        }
-//    }
-//
-//    var task: Task {
-//        switch self {
-//        case .zen, .showUser, .showAccounts: // Send no parameters
-//            return .requestPlain
-//        case let .updateUser(_, firstName, lastName):  // Always sends parameters in URL, regardless of which HTTP method is used
-//            return .requestParameters(parameters: ["first_name": firstName, "last_name": lastName], encoding: URLEncoding.queryString)
-//        case let .createUser(firstName, lastName): // Always send parameters as JSON in request body
-//            return .requestParameters(parameters: ["first_name": firstName, "last_name": lastName], encoding: JSONEncoding.default)
-//        }
-//    }
-//
-//    var sampleData: Data {
-//        switch self {
-//        case .zen:
-//            return "Half measures are as bad as nothing at all.".utf8Encoded
-//        case .showUser(let id):
-//            return "{\"id\": \(id), \"first_name\": \"Harry\", \"last_name\": \"Potter\"}".utf8Encoded
-//        case .createUser(let firstName, let lastName):
-//            return "{\"id\": 100, \"first_name\": \"\(firstName)\", \"last_name\": \"\(lastName)\"}".utf8Encoded
-//        case .updateUser(let id, let firstName, let lastName):
-//            return "{\"id\": \(id), \"first_name\": \"\(firstName)\", \"last_name\": \"\(lastName)\"}".utf8Encoded
-//        case .showAccounts:
-//            // Provided you have a file named accounts.json in your bundle.
-//            guard let url = Bundle.main.url(forResource: "accounts", withExtension: "json"),
-//                let data = try? Data(contentsOf: url) else {
-//                    return Data()
-//            }
-//            return data
-//        }
-//    }
-//
-//    var headers: [String: String]? {
-//        return ["Content-type": "application/json"]
-//    }
-//}
-
+import CodableFirebase
 
 class MyListsViewModel: ObservableObject {
     
     @Published var lists: [ProductList] = []
     
-    let service = MoyaProvider<NetworkService.BusinessesPovider>()
-    
-    func downloadMyLists(_ completion: @escaping(_ downloadedLists: [ProductList]) -> Void) {
-        
-        service.request(.search(num: 5)) { result in
-            switch result {
-            case .success(let response):
-                print(try? JSONSerialization.jsonObject(with: response.data, options: []))
-            case .failure(let error):
-                print("failure ", error.localizedDescription)
-            }
-        }
-        
+    func downloadMyLists() {
         guard let id = Auth.auth().currentUser?.uid else { return }
-        
-        db.collection("users").document(id).collection("lists").order(by: "updated at", descending: true).addSnapshotListener { snapshot, error in
-            
-            var productLists: [ProductList] = []
+
+        db.collection("users").document(id).collection("lists").order(by: "updated at", descending: true).addSnapshotListener { [weak self] snapshot, error in
             
             if let error = error {
                 print("Error getting documents: \(error)")
             } else {
-                for document in snapshot!.documents {
-                    //                    var productList = try! FirestoreDecoder().decode(ProductList.self, from: document.data())
-                    //                    productList.id = document.documentID
-                    //                    productLists.append(productList)
+                print("Downloaded lists")
+                self?.lists = []
+                if let snapshot = snapshot {
+                    for document in snapshot.documents {
+                        if var list = try? FirestoreDecoder().decode(ProductList.self, from: document.data()) {
+                            list.id = document.documentID
+                            self?.lists.append(list)
+                        }
+                    }
                 }
-                completion(productLists)
             }
+        }
+    }
+    
+    func addNewList(with productList: ProductList = ProductList()) {
+        guard let id = Auth.auth().currentUser?.uid else { return }
+        
+        guard  let jsonData = try? JSONEncoder().encode(productList) else { return }
+        
+        do {
+            if var jsonArray = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? [String : Any] {
+                
+                jsonArray["products"] = nil
+                
+                // Filter empty arguments
+                jsonArray = jsonArray.filter { arg -> Bool in
+                    return (arg.value as? String) != ""
+                }
+                
+                jsonArray["created at"] = Timestamp.init()
+                jsonArray["updated at"] = Timestamp.init()
+                
+                // Add a new document with a generated id.
+                var ref: DocumentReference? = nil
+                
+                ref = db.collection("users").document(id).collection("lists").addDocument(data: jsonArray) { err in
+                    if let err = err {
+                        print("ERROR while adding document: \(err)")
+                    } else {
+                        //                        print("Product list added with ID: \(ref!.documentID)")
+                        productList.products?.forEach({ (product) in
+                            do {
+                                if let jsonData = try? JSONEncoder().encode(product) {
+                                    if let productJSON = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? [String : Any] {
+                                        if let ref = ref {
+                                            db.collection("users").document(id).collection("lists").document(ref.documentID).collection("products").document().setData(productJSON)
+                                        }
+                                    }
+                                }
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                        })
+                    }
+                }
+            }
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }
