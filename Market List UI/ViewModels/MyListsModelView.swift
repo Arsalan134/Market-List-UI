@@ -7,14 +7,16 @@
 //
 
 import Foundation
-
+import SwiftUI
 import Firebase
 import FBSDKCoreKit
 import CodableFirebase
 
+
 class MyListsViewModel: ObservableObject {
     
     @Published var lists: [ProductList] = []
+    @EnvironmentObject var productListEnviroment: SelectedProductList
     
     func downloadMyLists() {
         guard let id = Auth.auth().currentUser?.uid else { return }

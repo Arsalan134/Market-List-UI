@@ -19,7 +19,7 @@ struct MyProductsView: View {
                 
                 Text("Salam")
                 ScrollView {
-                    ForEach(self.myListsVM.lists) { list in
+                    ForEach(self.myProductsVM.products) { product in
                         Text("Necasiz")
                     }
                 }
@@ -28,7 +28,7 @@ struct MyProductsView: View {
             .navigationBarItems(trailing: NavigationLink(destination: MyProductsView()) {
                 Text("Show Detail View")
             })
-        }.onAppear(perform: self.myListsVM.downloadMyLists)
+        }.onAppear(perform: self.myProductsVM.downloadProducts)
     }
 }
 

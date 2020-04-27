@@ -14,7 +14,7 @@ enum Metrics: String, Codable {
     case kg, litr, pieces
 }
 
-struct Product: Codable, Equatable, Hashable {
+struct Product: Identifiable, Codable, Equatable, Hashable {
     var id: String?
     var name: String?
     var category: String?

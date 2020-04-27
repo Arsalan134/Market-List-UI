@@ -25,9 +25,13 @@ struct MyListsView: View {
                 }
             }
             .navigationBarTitle("My Lists")
-            .navigationBarItems(trailing: NavigationLink(destination: MyProductsView()) {
-                Text("Show Detail View")
-            })
+            .navigationBarItems(trailing: Button(action: {
+                self.myListsVM.$productListEnviroment.selectedProductList = ProductList()
+            }, label: {
+                NavigationLink(destination: MyProductsView()) {
+                    Text("Show Detail View")
+                }
+            }))
         }.onAppear(perform: self.myListsVM.downloadMyLists)
     }
 }

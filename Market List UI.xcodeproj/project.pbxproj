@@ -15,6 +15,7 @@
 		5C76A9B6245385C3006AC5BA /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76A9B5245385C3006AC5BA /* ProductList.swift */; };
 		5C76A9B8245385F9006AC5BA /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76A9B7245385F9006AC5BA /* Product.swift */; };
 		5C76A9BA245386ED006AC5BA /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76A9B9245386ED006AC5BA /* ProductsView.swift */; };
+		5C97CCBE2455D0450020F1E4 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C97CCBD2455D0450020F1E4 /* ListView.swift */; };
 		5CA9689F24532A1200E9D7E8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA9689E24532A1200E9D7E8 /* LoginView.swift */; };
 		5CBC073F2453100800604DBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC073E2453100800604DBC /* AppDelegate.swift */; };
 		5CBC07412453100800604DBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC07402453100800604DBC /* SceneDelegate.swift */; };
@@ -60,6 +61,7 @@
 		5C76A9B5245385C3006AC5BA /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
 		5C76A9B7245385F9006AC5BA /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		5C76A9B9245386ED006AC5BA /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
+		5C97CCBD2455D0450020F1E4 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		5CA9689E24532A1200E9D7E8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		5CBC073B2453100800604DBC /* Market List UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Market List UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CBC073E2453100800604DBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				5CBC07402453100800604DBC /* SceneDelegate.swift */,
+				5C97CCBD2455D0450020F1E4 /* ListView.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 			files = (
 				5CD28C462455C34800AFEA50 /* MyProductsView.swift in Sources */,
 				5CBC073F2453100800604DBC /* AppDelegate.swift in Sources */,
+				5C97CCBE2455D0450020F1E4 /* ListView.swift in Sources */,
 				5C76A9AF24533C05006AC5BA /* UserViewModel.swift in Sources */,
 				5CCF7396245495D70062C6A7 /* NetworkService.swift in Sources */,
 				5C76A9B424538599006AC5BA /* MyListsModelView.swift in Sources */,
