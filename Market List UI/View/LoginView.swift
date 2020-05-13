@@ -11,7 +11,7 @@ import SwiftUI
 struct LoginView: View {
         
     @ObservedObject var loginVM = LoginViewModel()
-    @State private var typedEmail = ""
+//    @State private var typedEmail = ""
     
     var body: some View {
         NavigationView {
@@ -24,9 +24,9 @@ struct LoginView: View {
                     .shadow(radius: 10)
                     .padding(.bottom, 50)
                  
-                TextField("Email", text: self.$typedEmail)
-                    .padding()
-                    .cornerRadius(20.0)
+//                TextField("Email", text: self.loginVM.typedEmail)
+//                    .padding()
+//                    .cornerRadius(20.0)
                 
                 Button(action: {
                     self.loginVM.login()

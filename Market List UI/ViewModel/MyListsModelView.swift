@@ -12,11 +12,13 @@ import Firebase
 import FBSDKCoreKit
 import CodableFirebase
 
+class UserSettings: ObservableObject {
+    @Published var score = 0
+}
 
 class MyListsViewModel: ObservableObject {
     
     @Published var lists: [ProductList] = []
-    @EnvironmentObject var productListEnviroment: SelectedProductList
     
     func downloadMyLists() {
         guard let id = Auth.auth().currentUser?.uid else { return }
@@ -35,6 +37,8 @@ class MyListsViewModel: ObservableObject {
                             self?.lists.append(list)
                         }
                     }
+                    let testList = ProductList(id: "123", name: "Name", products: [])
+                    self?.lists.append(testList)
                 }
             }
         }

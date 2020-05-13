@@ -11,7 +11,6 @@ import SwiftUI
 struct MyProductsView: View {
     
     @ObservedObject var myProductsVM = MyProductsViewModel()
-    @State private var ispp = false
     
     var body: some View {
         NavigationView {

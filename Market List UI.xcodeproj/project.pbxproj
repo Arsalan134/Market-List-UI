@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C0757A12454A40C002CCF32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C0757A02454A40C002CCF32 /* GoogleService-Info.plist */; };
+		5C30FFA2246C13B700B69400 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30FFA1246C13B700B69400 /* CoordinatorProtocol.swift */; };
+		5C30FFA4246C23B500B69400 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30FFA3246C23B500B69400 /* CourseView.swift */; };
+		5C30FFA6246C252200B69400 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30FFA5246C252200B69400 /* Home.swift */; };
 		5C76A9AD24533A15006AC5BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76A9AC24533A15006AC5BA /* User.swift */; };
 		5C76A9AF24533C05006AC5BA /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76A9AE24533C05006AC5BA /* UserViewModel.swift */; };
 		5C76A9B22453821C006AC5BA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76A9B12453821C006AC5BA /* LoginViewModel.swift */; };
@@ -19,15 +21,15 @@
 		5CA9689F24532A1200E9D7E8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA9689E24532A1200E9D7E8 /* LoginView.swift */; };
 		5CBC073F2453100800604DBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC073E2453100800604DBC /* AppDelegate.swift */; };
 		5CBC07412453100800604DBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC07402453100800604DBC /* SceneDelegate.swift */; };
-		5CBC07432453100800604DBC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC07422453100800604DBC /* ContentView.swift */; };
+		5CBC07432453100800604DBC /* MyListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC07422453100800604DBC /* MyListsView.swift */; };
 		5CBC07452453100A00604DBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CBC07442453100A00604DBC /* Assets.xcassets */; };
 		5CBC07482453100A00604DBC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CBC07472453100A00604DBC /* Preview Assets.xcassets */; };
 		5CBC074B2453100A00604DBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CBC07492453100A00604DBC /* LaunchScreen.storyboard */; };
 		5CBC07562453100A00604DBC /* Market_List_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC07552453100A00604DBC /* Market_List_UITests.swift */; };
 		5CBC07612453100A00604DBC /* Market_List_UIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC07602453100A00604DBC /* Market_List_UIUITests.swift */; };
-		5CCF7396245495D70062C6A7 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF7395245495D70062C6A7 /* NetworkService.swift */; };
 		5CD28C462455C34800AFEA50 /* MyProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD28C452455C34800AFEA50 /* MyProductsView.swift */; };
 		5CD28C482455C54500AFEA50 /* MyProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD28C472455C54500AFEA50 /* MyProductsViewModel.swift */; };
+		5CFE7C712457179D007947D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CFE7C702457179D007947D8 /* GoogleService-Info.plist */; };
 		5E245EEBB9189E0A76F320BD /* Pods_Market_List_UI_Market_List_UIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDBCA64754AD6FC96E8F5DD /* Pods_Market_List_UI_Market_List_UIUITests.framework */; };
 		5E24B78AEBA5E2C40B7A6B8E /* Pods_Market_List_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AAEDDB4315048113350D28 /* Pods_Market_List_UITests.framework */; };
 		F7EA3B7CC9C51AA1CAA1387E /* Pods_Market_List_UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1160F37A8B6014E9C2B2F5D4 /* Pods_Market_List_UI.framework */; };
@@ -53,7 +55,9 @@
 /* Begin PBXFileReference section */
 		10DD807252A86A11F5B7CA2B /* Pods-Market List UI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market List UI.release.xcconfig"; path = "Target Support Files/Pods-Market List UI/Pods-Market List UI.release.xcconfig"; sourceTree = "<group>"; };
 		1160F37A8B6014E9C2B2F5D4 /* Pods_Market_List_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Market_List_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C0757A02454A40C002CCF32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5C30FFA1246C13B700B69400 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		5C30FFA3246C23B500B69400 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		5C30FFA5246C252200B69400 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		5C76A9AC24533A15006AC5BA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5C76A9AE24533C05006AC5BA /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		5C76A9B12453821C006AC5BA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -66,7 +70,7 @@
 		5CBC073B2453100800604DBC /* Market List UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Market List UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CBC073E2453100800604DBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CBC07402453100800604DBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5CBC07422453100800604DBC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5CBC07422453100800604DBC /* MyListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListsView.swift; sourceTree = "<group>"; };
 		5CBC07442453100A00604DBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CBC07472453100A00604DBC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5CBC074A2453100A00604DBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,9 +81,9 @@
 		5CBC075C2453100A00604DBC /* Market List UIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Market List UIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CBC07602453100A00604DBC /* Market_List_UIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market_List_UIUITests.swift; sourceTree = "<group>"; };
 		5CBC07622453100A00604DBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5CCF7395245495D70062C6A7 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		5CD28C452455C34800AFEA50 /* MyProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductsView.swift; sourceTree = "<group>"; };
 		5CD28C472455C54500AFEA50 /* MyProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductsViewModel.swift; sourceTree = "<group>"; };
+		5CFE7C702457179D007947D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		601674EA75209B714F3038E8 /* Pods-Market List UI-Market List UIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market List UI-Market List UIUITests.debug.xcconfig"; path = "Target Support Files/Pods-Market List UI-Market List UIUITests/Pods-Market List UI-Market List UIUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6CC1D596EB9AA6A320E0DD36 /* Pods-Market List UI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market List UI.debug.xcconfig"; path = "Target Support Files/Pods-Market List UI/Pods-Market List UI.debug.xcconfig"; sourceTree = "<group>"; };
 		834CF166E2A75B1A71627B34 /* Pods-Market List UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market List UITests.debug.xcconfig"; path = "Target Support Files/Pods-Market List UITests/Pods-Market List UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,17 +121,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5C76A9AB24533A09006AC5BA /* Models */ = {
+		5C30FFA0246C139300B69400 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				5C30FFA1246C13B700B69400 /* CoordinatorProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		5C76A9AB24533A09006AC5BA /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				5C76A9AC24533A15006AC5BA /* User.swift */,
 				5C76A9B5245385C3006AC5BA /* ProductList.swift */,
 				5C76A9B7245385F9006AC5BA /* Product.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		5C76A9B024533C0B006AC5BA /* ViewModels */ = {
+		5C76A9B024533C0B006AC5BA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				5CD28C472455C54500AFEA50 /* MyProductsViewModel.swift */,
@@ -135,7 +147,7 @@
 				5C76A9AE24533C05006AC5BA /* UserViewModel.swift */,
 				5C76A9B12453821C006AC5BA /* LoginViewModel.swift */,
 			);
-			path = ViewModels;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		5CBC07322453100800604DBC = {
@@ -163,17 +175,18 @@
 		5CBC073D2453100800604DBC /* Market List UI */ = {
 			isa = PBXGroup;
 			children = (
-				5C0757A02454A40C002CCF32 /* GoogleService-Info.plist */,
+				5C30FFA0246C139300B69400 /* Protocol */,
+				5CFE7C702457179D007947D8 /* GoogleService-Info.plist */,
 				5CBC074C2453100A00604DBC /* Info.plist */,
 				5CBC073E2453100800604DBC /* AppDelegate.swift */,
 				5CBC07442453100A00604DBC /* Assets.xcassets */,
 				5CD28C4A2455C56D00AFEA50 /* Delegate */,
 				5CBC07492453100A00604DBC /* LaunchScreen.storyboard */,
-				5C76A9AB24533A09006AC5BA /* Models */,
+				5C76A9AB24533A09006AC5BA /* Model */,
 				5CBC07462453100A00604DBC /* Preview Content */,
 				5CCF7397245495E60062C6A7 /* Service */,
 				5CD28C492455C55100AFEA50 /* View */,
-				5C76A9B024533C0B006AC5BA /* ViewModels */,
+				5C76A9B024533C0B006AC5BA /* ViewModel */,
 			);
 			path = "Market List UI";
 			sourceTree = "<group>";
@@ -207,7 +220,6 @@
 		5CCF7397245495E60062C6A7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				5CCF7395245495D70062C6A7 /* NetworkService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -215,8 +227,11 @@
 		5CD28C492455C55100AFEA50 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5C97CCBD2455D0450020F1E4 /* ListView.swift */,
 				5CD28C452455C34800AFEA50 /* MyProductsView.swift */,
-				5CBC07422453100800604DBC /* ContentView.swift */,
+				5CBC07422453100800604DBC /* MyListsView.swift */,
+				5C30FFA3246C23B500B69400 /* CourseView.swift */,
+				5C30FFA5246C252200B69400 /* Home.swift */,
 				5CA9689E24532A1200E9D7E8 /* LoginView.swift */,
 				5C76A9B9245386ED006AC5BA /* ProductsView.swift */,
 			);
@@ -227,7 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				5CBC07402453100800604DBC /* SceneDelegate.swift */,
-				5C97CCBD2455D0450020F1E4 /* ListView.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -365,7 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CBC074B2453100A00604DBC /* LaunchScreen.storyboard in Resources */,
-				5C0757A12454A40C002CCF32 /* GoogleService-Info.plist in Resources */,
+				5CFE7C712457179D007947D8 /* GoogleService-Info.plist in Resources */,
 				5CBC07482453100A00604DBC /* Preview Assets.xcassets in Resources */,
 				5CBC07452453100A00604DBC /* Assets.xcassets in Resources */,
 			);
@@ -499,15 +513,17 @@
 				5CBC073F2453100800604DBC /* AppDelegate.swift in Sources */,
 				5C97CCBE2455D0450020F1E4 /* ListView.swift in Sources */,
 				5C76A9AF24533C05006AC5BA /* UserViewModel.swift in Sources */,
-				5CCF7396245495D70062C6A7 /* NetworkService.swift in Sources */,
 				5C76A9B424538599006AC5BA /* MyListsModelView.swift in Sources */,
 				5CBC07412453100800604DBC /* SceneDelegate.swift in Sources */,
+				5C30FFA6246C252200B69400 /* Home.swift in Sources */,
 				5C76A9B6245385C3006AC5BA /* ProductList.swift in Sources */,
+				5C30FFA4246C23B500B69400 /* CourseView.swift in Sources */,
 				5CA9689F24532A1200E9D7E8 /* LoginView.swift in Sources */,
 				5C76A9BA245386ED006AC5BA /* ProductsView.swift in Sources */,
 				5C76A9AD24533A15006AC5BA /* User.swift in Sources */,
+				5C30FFA2246C13B700B69400 /* CoordinatorProtocol.swift in Sources */,
 				5C76A9B8245385F9006AC5BA /* Product.swift in Sources */,
-				5CBC07432453100800604DBC /* ContentView.swift in Sources */,
+				5CBC07432453100800604DBC /* MyListsView.swift in Sources */,
 				5CD28C482455C54500AFEA50 /* MyProductsViewModel.swift in Sources */,
 				5C76A9B22453821C006AC5BA /* LoginViewModel.swift in Sources */,
 			);

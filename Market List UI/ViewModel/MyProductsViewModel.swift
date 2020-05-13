@@ -12,18 +12,18 @@ import Firebase
 import FBSDKCoreKit
 import CodableFirebase
 
-
 class MyProductsViewModel: ObservableObject {
     
     @Published var products: [Product] = []
-    @EnvironmentObject var productList: SelectedProductList
+    @EnvironmentObject var settings: UserSettings
     
     func downloadProducts() {
-        guard let listID = self.productList.selectedProductList?.id, let id = Auth.auth().currentUser?.uid else {return}
-        // TODO: Return to dfault id of user not Naza's
-
+        //        guard let listID = self.productList.selectedProductList?.id, let id = Auth.auth().currentUser?.uid else {return}
+        // TODO: Return to default id of user not Naza's
+        let listID = "nansodnaosdnoasndoas"
+        
         db.collection("users").document("RxdJAxLC0MOGt9NAp7fHzYTb65c2").collection("lists").document(listID).collection("products").addSnapshotListener { [weak self] snapshot, error in
-
+            
             if let error = error {
                 print("Error getting documents: \(error)")
             } else {
@@ -38,5 +38,4 @@ class MyProductsViewModel: ObservableObject {
             }
         }
     }
-
 }
